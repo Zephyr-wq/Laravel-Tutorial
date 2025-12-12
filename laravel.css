@@ -1,0 +1,51 @@
+/* style.css - visually tidy, minimal overrides */
+
+body {
+  background: #f6f8fa;
+  color: #222;
+}
+
+.product-card img {
+  object-fit: cover;
+  height: 180px;
+}
+
+.card .btn {
+  white-space: nowrap;
+}
+
+/* cart item row */
+.cart-item {
+  padding: 12px;
+  border: 1px solid #e7e9eb;
+  border-radius: 8px;
+  background: #fff;
+  margin-bottom: 12px;
+}
+
+.cart-item .item-controls {
+  min-width: 140px;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qty-control button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  line-height: 1;
+}
+
+.sticky-summary {
+  position: sticky;
+  top: 96px;
+}
+
+/* small screens: product image taller */
+@media (max-width: 576px) {
+  .product-card img { height: 200px; }
+}

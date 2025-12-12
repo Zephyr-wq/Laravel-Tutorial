@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop — Catalog</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="laravel.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">My Shop</a>
+    <div class="ms-auto d-flex align-items-center">
+      <a class="btn btn-outline-light me-2" href="cart.html">
+        Cart page
+      </a>
+      <button class="btn btn-light position-relative" id="cartBtn" aria-label="Open cart (modal)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart"
+             viewBox="0 0 16 16"><path d="M0 1a1 1 0 0 1 1-1h1.11a1 1 0 0 1 .98.804L3.89 3H14a1 1 0 0 1 .97 1.243l-1.5 6A1 1 0 0 1 12.5 11H4a1 1 0 0 1-.98-.804L1.61 1.607A1 1 0 0 1 1 1H0z"/></svg>
+        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-5">
+
+  <header class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h4">Products</h1>
+    <p class="text-muted mb-0">Replace images and text on each card with your own content.</p>
+  </header>
+
+  <!-- Product Grid -->
+  <div class="row g-4" id="product-grid">
+    <!-- Ready-made cards: replace img src, name, price -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card product-card h-100">
+        <img src="https://via.placeholder.com/400x300?text=Product+1" class="card-img-top" alt="Product 1">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Classic Tee</h5>
+          <p class="card-text text-muted small mb-2">Comfortable cotton tee — replace with your description.</p>
+          <div class="mt-auto d-flex justify-content-between align-items-center">
+            <div>
+              <div class="fw-bold">₦1,500</div>
+            </div>
+            <button class="btn btn-sm btn-primary add-to-cart"
+                    data-id="p1"
+                    data-name="Classic Tee"
+                    data-price="1500">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ready-made cards: replace img src, name, price -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card product-card h-100">
+        <img src="https://via.placeholder.com/400x300?text=Product+1" class="card-img-top" alt="Product 1">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">USB Hub</h5>
+          <p class="card-text text-muted small mb-2">Type-C  to multiple output ports to make your work much easier and fun.</p>
+          <div class="mt-auto d-flex justify-content-between align-items-center">
+            <div>
+              <div class="fw-bold">₦12,000</div>
+            </div>
+            <button class="btn btn-sm btn-primary add-to-cart"
+                    data-id="p1"
+                    data-name="USB Hub"
+                    data-price="12000">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ready-made cards: replace img src, name, price -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card product-card h-100">
+        <img src="https://via.placeholder.com/400x300?text=Product+1" class="card-img-top" alt="Product 1">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Quality Vibrator</h5>
+          <p class="card-text text-muted small mb-2">Comfortable and quality women's vibrator to give you all the pleasures of life.</p>
+          <div class="mt-auto d-flex justify-content-between align-items-center">
+            <div>
+              <div class="fw-bold">₦28,000</div>
+            </div>
+            <button class="btn btn-sm btn-primary add-to-cart"
+                    data-id="p1"
+                    data-name="Quality Vibrator"
+                    data-price="28000">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card product-card h-100">
+        <img src="https://via.placeholder.com/400x300?text=Product+2" class="card-img-top" alt="Product 2">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Sneaker Model</h5>
+          <p class="card-text text-muted small mb-2">Lightweight sneaker — change image/price as needed.</p>
+          <div class="mt-auto d-flex justify-content-between align-items-center">
+            <div>
+              <div class="fw-bold">₦9,200</div>
+            </div>
+            <button class="btn btn-sm btn-primary add-to-cart"
+                    data-id="p2"
+                    data-name="Sneaker Model"
+                    data-price="9200">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Duplicate / edit these cards for more products -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card product-card h-100">
+        <img src="https://via.placeholder.com/400x300?text=Product+3" class="card-img-top" alt="Product 3">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Backpack</h5>
+          <p class="card-text text-muted small mb-2">Durable pack — replace details and image.</p>
+          <div class="mt-auto d-flex justify-content-between align-items-center">
+            <div>
+              <div class="fw-bold">₦6,800</div>
+            </div>
+            <button class="btn btn-sm btn-primary add-to-cart"
+                    data-id="p3"
+                    data-name="Backpack"
+                    data-price="6800">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card product-card h-100">
+        <img src="https://via.placeholder.com/400x300?text=Product+4" class="card-img-top" alt="Product 4">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Watch</h5>
+          <p class="card-text text-muted small mb-2">Minimal watch — edit to your needs.</p>
+          <div class="mt-auto d-flex justify-content-between align-items-center">
+            <div>
+              <div class="fw-bold">₦14,000</div>
+            </div>
+            <button class="btn btn-sm btn-primary add-to-cart"
+                    data-id="p4"
+                    data-name="Watch"
+                    data-price="14000">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- end product grid -->
+
+</main>
+
+<!-- CART MODAL -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header border-bottom">
+        <h5 class="modal-title">Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div id="cart-items-modal">
+          <!-- populated by script -->
+        </div>
+
+        <div class="mt-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              <input type="checkbox" id="select-all">
+              <label for="select-all" class="ms-1">Select all</label>
+            </div>
+            <div>
+              <button class="btn btn-sm btn-outline-danger" id="remove-selected">Remove selected</button>
+              <button class="btn btn-sm btn-outline-secondary" id="clear-cart">Clear cart</button>
+            </div>
+          </div>
+
+          <div class="card p-3">
+            <div class="d-flex justify-content-between">
+              <div>Subtotal</div>
+              <div id="modal-subtotal">₦0.00</div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="apply-delivery-modal">
+                <label class="form-check-label" for="apply-delivery-modal">
+                  Add delivery fee
+                </label>
+              </div>
+              <div class="input-group input-group-sm" style="max-width: 180px;">
+                <span class="input-group-text">₦</span>
+                <input type="number" class="form-control form-control-sm" id="delivery-fee-modal" min="0" value="500">
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-between fw-bold">
+              <div>Total</div>
+              <div id="modal-grandtotal">₦0.00</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <a href="cart.html" class="btn btn-primary">Open cart page</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue shopping</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap + script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="laravel.js"></script>
+</body>
+</html>
