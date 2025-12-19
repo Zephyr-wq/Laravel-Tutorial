@@ -1,0 +1,15 @@
+/* checkout.css */
+
+.sticky-summary {
+  position: sticky;
+  top: 96px;
+}
+
+#checkout-items > div {
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+#checkout-items > div:last-child {
+  border-bottom: none;
+}
